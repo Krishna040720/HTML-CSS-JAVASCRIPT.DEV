@@ -3,331 +3,385 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web Designing Workshop (BCS-353) — Lab Experiments</title>
-  <style>
-    :root {
-      --primary: #1e3a8a;
-      --primary-light: #2563eb;
-      --accent: #f59e0b;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #1e293b;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --js-tag: #7c3aed;
-      --css-tag: #0284c7;
-      --html-tag: #ea580c;
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      padding: 40px 20px;
-    }
-    .container {
-      max-width: 1050px;
-      margin: 0 auto;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-      padding: 35px 25px;
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
-      color: white;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
-    }
-    header img {
-      height: 90px;
-      width: auto;
-      margin-bottom: 12px;
-      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
-    }
-    header h1 {
-      font-size: 2.2rem;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      margin-bottom: 8px;
-    }
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.95;
-    }
-    .badge {
-      display: inline-block;
-      margin-top: 14px;
-      padding: 6px 16px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 9999px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 22px;
-      margin-bottom: 40px;
-    }
-    .card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 22px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.12);
-    }
-    .card-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-    }
-    .card-tag {
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--primary-light);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .tech-pill {
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 6px;
-      text-transform: uppercase;
-    }
-    .pill-html { background: #ffedd5; color: var(--html-tag); }
-    .pill-css { background: #e0f2fe; color: var(--css-tag); }
-    .pill-js { background: #ede9fe; color: var(--js-tag); }
-    
-    .card h2 {
-      font-size: 1.25rem;
-      margin-bottom: 10px;
-      color: var(--text);
-    }
-    .card p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      margin-bottom: 20px;
-      flex-grow: 1;
-    }
-    .card-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background-color: var(--primary);
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.88rem;
-      padding: 9px 16px;
-      border-radius: 8px;
-      transition: background-color 0.2s;
-    }
-    .btn-primary:hover {
-      background-color: #1d4ed8;
-    }
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.88rem;
-      padding: 9px 12px;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      transition: background-color 0.2s;
-    }
-    .btn-secondary:hover {
-      background-color: #f1f5f9;
-    }
-    footer {
-      text-align: center;
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      padding-top: 25px;
-      border-top: 1px solid var(--border);
-    }
-  </style>
+  <title>Online Store — GL Bajaj Institute of Technology and Management</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <img src="logo.png" alt="GL Bajaj Logo">
-      <h1>Web Designing Workshop (BCS-353)</h1>
-      <p>Department of Computer Science & Engineering | GL Bajaj ITM</p>
-      <div class="badge">Lab Experiments 1 to 9</div>
-    </header>
 
-    <div class="grid">
-      <!-- Experiment 1 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 01</span>
-            <span class="tech-pill pill-html">HTML / CSS</span>
-          </div>
-          <h2>Online Book Store — Homepage</h2>
-          <p>Static homepage designed using HTML framesets consisting of top, left, and right target frames with department catalogue routing and custom styling.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%201/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%201" target="_blank">Code</a>
-        </div>
-      </div>
+  <!-- Master Website Wrapper -->
+  <div class="store-wrapper">
 
-      <!-- Experiment 2 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 02</span>
-            <span class="tech-pill pill-css">Pure CSS :target</span>
-          </div>
-          <h2>Clean Login Page</h2>
-          <p>Login interface crafted with HTML tables and pure CSS <code>:target</code> pseudo-class navigation for client-side multi-tab view switching without JavaScript.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%202/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%202" target="_blank">Code</a>
-        </div>
-      </div>
+    <!-- Row 1: Header (Logo + Store Name + College) -->
+    <table class="header-table">
+      <tr>
+        <td class="logo-cell">
+          <img src="logo.png" alt="GL Bajaj Logo">
+        </td>
+        <td class="title-cell">
+          <div class="store-title">ONLINE STORE</div>
+          <div class="college-title">GL BAJAJ INSTITUTE OF TECHNOLOGY AND MANAGEMENT</div>
+        </td>
+      </tr>
+    </table>
 
-      <!-- Experiment 3 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 03</span>
-            <span class="tech-pill pill-html">HTML Tables</span>
-          </div>
-          <h2>Catalogue Page</h2>
-          <p>Structured product catalogue displaying textbook covers, authors, publishers, pricing in Indian Rupees, and styled interactive Add to Cart buttons.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%203/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%203" target="_blank">Code</a>
-        </div>
-      </div>
+    <!-- Row 2: Navigation Menu Bar -->
+    <table class="menu-table">
+      <tr class="menu-row">
+        <td><a href="#home" data-view="home" class="active">Home</a></td>
+        <td><a href="#catalogue" data-view="catalogue">Catalogue</a></td>
+        <td><a href="#cart" data-view="cart">Cart <span class="cart-badge" id="cartBadge">4</span></a></td>
+        <td><a href="#login" data-view="login">Login</a></td>
+        <td><a href="#registration" data-view="registration">Registration</a></td>
+        <td style="width: 140px;">
+          <a href="#experiments" id="openLabBtn" class="lab-btn">&bull; Lab Exps (1-9)</a>
+        </td>
+      </tr>
+    </table>
 
-      <!-- Experiment 4 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 04</span>
-            <span class="tech-pill pill-html">HTML Tables</span>
-          </div>
-          <h2>Shopping Cart Page</h2>
-          <p>Itemized shopping cart table presenting book details, quantities, line-item pricing, and automated grand total calculation formatting.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%204/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%204" target="_blank">Code</a>
-        </div>
-      </div>
+    <!-- Row 3: Split Body Layout (Left Categories + Right Dynamic Content) -->
+    <table class="content-table">
+      <tbody>
+        <tr>
+          <!-- Left Sidebar: Book Categories -->
+          <td class="sidebar-td">
+            <div class="sidebar-title">BOOK CATEGORIES</div>
+            <ul class="category-list">
+              <li><a href="#catalogue" data-cat="ALL" class="active">&bull; All Books</a></li>
+              <li><a href="#catalogue" data-cat="CSE">&bull; CSE</a></li>
+              <li><a href="#catalogue" data-cat="ECE">&bull; ECE</a></li>
+              <li><a href="#catalogue" data-cat="EEE">&bull; EEE</a></li>
+              <li><a href="#catalogue" data-cat="CIVIL">&bull; CIVIL</a></li>
+              <li><a href="#catalogue" data-cat="MECHANICAL">&bull; MECHANICAL</a></li>
+            </ul>
+          </td>
 
-      <!-- Experiment 5 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 05</span>
-            <span class="tech-pill pill-html">HTML Forms</span>
-          </div>
-          <h2>Registration Page Form</h2>
-          <p>Comprehensive registration form with text fields, password masking, radio buttons, DOB dropdowns, language checkboxes, and textarea with reset/submit.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%205/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%205" target="_blank">Code</a>
-        </div>
-      </div>
+          <!-- Right Content Area -->
+          <td class="main-td">
 
-      <!-- Experiment 6 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 06</span>
-            <span class="tech-pill pill-js">JavaScript</span>
-          </div>
-          <h2>JS Validation: Name & Password</h2>
-          <p>Client-side JavaScript form validation checking alphabet-only constraints, minimum 6-character length requirements, and dynamic visual styling.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%206/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%206" target="_blank">Code</a>
-        </div>
-      </div>
+            <!-- ================= VIEW 1: HOME ================= -->
+            <div id="panel-home" class="view-panel active">
+              <div class="hero-box">
+                <h2>Welcome to Online Store</h2>
+                <p>Welcome to the official academic online book store portal of <strong>GL Bajaj Institute of Technology and Management</strong>. Access official engineering curriculum textbooks, lecture notes, laboratory manuals, and competitive technical publications for CSE, ECE, EEE, Civil, and Mechanical branches.</p>
+                <a href="#catalogue" onclick="switchView('catalogue')" class="hero-cta">Explore Full Catalogue &rarr;</a>
+              </div>
 
-      <!-- Experiment 7 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 07</span>
-            <span class="tech-pill pill-js">JavaScript</span>
-          </div>
-          <h2>JS Validation: Email & Phone</h2>
-          <p>Client-side regular expression validation ensuring strict <code>name@domain.com</code> email formatting and exactly 10-digit numeric phone verification.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%207/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%207" target="_blank">Code</a>
-        </div>
-      </div>
+              <h3 class="section-title">Featured Academic Textbooks</h3>
+              <div class="featured-grid">
+                <div class="featured-card">
+                  <img src="cover1.png" alt="Data Structures Using C">
+                  <div class="dept-tag">CSE Department</div>
+                  <h4>Data Structures Using C</h4>
+                  <div class="price">&#8377;550</div>
+                  <button class="cart-btn" onclick="addToCart(1)">Add to cart</button>
+                </div>
 
-      <!-- Experiment 8 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 08</span>
-            <span class="tech-pill pill-css">CSS Selectors</span>
-          </div>
-          <h2>CSS: Fonts, Colors & Backgrounds</h2>
-          <p>Advanced CSS demonstrating class/ID selectors, typography hierarchies, and element-specific vs page-level background image application.</p>
-        </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%208/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%208" target="_blank">Code</a>
-        </div>
-      </div>
+                <div class="featured-card">
+                  <img src="cover2.png" alt="Electronic Devices and Circuits">
+                  <div class="dept-tag">ECE Department</div>
+                  <h4>Electronic Devices &amp; Circuits</h4>
+                  <div class="price">&#8377;620</div>
+                  <button class="cart-btn" onclick="addToCart(2)">Add to cart</button>
+                </div>
 
-      <!-- Experiment 9 -->
-      <div class="card">
-        <div>
-          <div class="card-header">
-            <span class="card-tag">Experiment 09</span>
-            <span class="tech-pill pill-css">CSS Links</span>
-          </div>
-          <h2>CSS: Background Repeat & Links</h2>
-          <p>Controlling <code>background-repeat</code> (repeat vs repeat-x) and styling hyperlink pseudo-classes (<code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>).</p>
+                <div class="featured-card">
+                  <img src="cover3.png" alt="Basic Electrical Engineering">
+                  <div class="dept-tag">EEE Department</div>
+                  <h4>Basic Electrical Engineering</h4>
+                  <div class="price">&#8377;480</div>
+                  <button class="cart-btn" onclick="addToCart(3)">Add to cart</button>
+                </div>
+
+                <div class="featured-card">
+                  <img src="cover4.png" alt="Strength of Materials">
+                  <div class="dept-tag">CIVIL Department</div>
+                  <h4>Strength of Materials</h4>
+                  <div class="price">&#8377;450</div>
+                  <button class="cart-btn" onclick="addToCart(4)">Add to cart</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- ================= VIEW 2: CATALOGUE (Exp 3) ================= -->
+            <div id="panel-catalogue" class="view-panel">
+              <h2 class="section-title">Academic Book Catalogue</h2>
+              <table class="catalogue-table website">
+                <thead>
+                  <tr class="menu-row">
+                    <th style="width: 75px;">Branch</th>
+                    <th style="width: 105px;">Cover</th>
+                    <th>Book Details</th>
+                    <th style="width: 85px;">Price</th>
+                    <th style="width: 115px;">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="catalogueTableBody">
+                  <!-- Injected via JavaScript -->
+                </tbody>
+              </table>
+            </div>
+
+            <!-- ================= VIEW 3: CART (Exp 4) ================= -->
+            <div id="panel-cart" class="view-panel">
+              <h2 class="section-title">Your Shopping Cart</h2>
+              <table class="cart-table website">
+                <thead>
+                  <tr class="menu-row heading">
+                    <th style="width: 80px;">Branch</th>
+                    <th>Book Name</th>
+                    <th style="width: 90px;">Price</th>
+                    <th style="width: 110px;">Quantity</th>
+                    <th style="width: 90px;">Amount</th>
+                    <th style="width: 95px;">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="cartTableBody">
+                  <!-- Injected via JavaScript -->
+                </tbody>
+                <tfoot id="cartTableFoot">
+                  <!-- Grand total injected via JavaScript -->
+                </tfoot>
+              </table>
+
+              <div class="cart-actions-bar">
+                <button class="reset-btn" onclick="switchView('catalogue')">&larr; Continue Shopping</button>
+                <button class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout &rarr;</button>
+              </div>
+            </div>
+
+            <!-- ================= VIEW 4: LOGIN (Exp 2) ================= -->
+            <div id="panel-login" class="view-panel">
+              <h2 class="section-title">Student &amp; Faculty Login</h2>
+              <div class="form-container">
+                <form id="loginForm" onsubmit="return handleLoginSubmit(event)">
+                  <table class="form-table website">
+                    <tr>
+                      <td class="form-label">User Name</td>
+                      <td>
+                        <input type="text" id="loginUsername" placeholder="Enter username / enrollment" required>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="form-label">Password</td>
+                      <td>
+                        <input type="password" id="loginPassword" placeholder="Enter password" required>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="form-label"></td>
+                      <td>
+                        <button type="submit" class="submit-btn">Login</button>
+                        <button type="reset" class="reset-btn">Reset</button>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+                <p style="margin-top: 15px; font-size: 14px; color: #475569;">
+                  New student? <a href="#registration" onclick="switchView('registration')" style="color: #1e3a8a; font-weight: bold;">Create an account here</a>.
+                </p>
+              </div>
+            </div>
+
+            <!-- ================= VIEW 5: REGISTRATION (Exp 5, 6, 7) ================= -->
+            <div id="panel-registration" class="view-panel">
+              <h2 class="section-title">New User Registration</h2>
+              <div class="form-container">
+                <form id="registrationForm" onsubmit="return handleRegistrationSubmit(event)">
+                  <table class="form-table website">
+                    <!-- 1) Name -->
+                    <tr>
+                      <td class="form-label">Name</td>
+                      <td>
+                        <input type="text" id="regName" placeholder="Enter your full name" oninput="validateName()">
+                        <div class="field-error" id="regNameError"></div>
+                      </td>
+                    </tr>
+
+                    <!-- 2) Password -->
+                    <tr>
+                      <td class="form-label">Password</td>
+                      <td>
+                        <input type="password" id="regPassword" placeholder="Min. 6 characters" oninput="validatePassword()">
+                        <div class="field-error" id="regPassError"></div>
+                      </td>
+                    </tr>
+
+                    <!-- 3) E-mail id -->
+                    <tr>
+                      <td class="form-label">E-mail ID</td>
+                      <td>
+                        <input type="text" id="regEmail" placeholder="name@domain.com" oninput="validateEmail()">
+                        <div class="field-error" id="regEmailError"></div>
+                      </td>
+                    </tr>
+
+                    <!-- 4) Phone Number -->
+                    <tr>
+                      <td class="form-label">Phone Number</td>
+                      <td>
+                        <input type="text" id="regPhone" placeholder="10-digit mobile number" oninput="validatePhone()">
+                        <div class="field-error" id="regPhoneError"></div>
+                      </td>
+                    </tr>
+
+                    <!-- 5) Sex -->
+                    <tr>
+                      <td class="form-label">Sex</td>
+                      <td class="radio-group">
+                        <label><input type="radio" name="regSex" value="male" checked> Male</label>
+                        <label><input type="radio" name="regSex" value="female"> Female</label>
+                      </td>
+                    </tr>
+
+                    <!-- 6) Date of birth -->
+                    <tr>
+                      <td class="form-label">Date of Birth</td>
+                      <td>
+                        <div style="display: flex; gap: 8px;">
+                          <select id="regDay" style="width: 32%;">
+                            <option>Day</option>
+                            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+                            <option>6</option><option>7</option><option>8</option><option>9</option><option>10</option>
+                            <option>11</option><option>12</option><option>13</option><option>14</option><option>15</option>
+                            <option>16</option><option>17</option><option>18</option><option>19</option><option>20</option>
+                            <option>21</option><option>22</option><option>23</option><option>24</option><option>25</option>
+                            <option>26</option><option>27</option><option>28</option><option>29</option><option>30</option><option>31</option>
+                          </select>
+                          <select id="regMonth" style="width: 34%;">
+                            <option>Month</option>
+                            <option>Jan</option><option>Feb</option><option>Mar</option><option>Apr</option>
+                            <option>May</option><option>Jun</option><option>Jul</option><option>Aug</option>
+                            <option>Sep</option><option>Oct</option><option>Nov</option><option>Dec</option>
+                          </select>
+                          <select id="regYear" style="width: 34%;">
+                            <option>Year</option>
+                            <option>2006</option><option>2005</option><option>2004</option><option>2003</option><option>2002</option>
+                            <option>2001</option><option>2000</option><option>1999</option><option>1998</option><option>1997</option>
+                          </select>
+                        </div>
+                      </td>
+                    </tr>
+
+                    <!-- 7) Languages known -->
+                    <tr>
+                      <td class="form-label">Languages Known</td>
+                      <td class="checkbox-group">
+                        <label><input type="checkbox" name="lang" value="english" checked> English</label>
+                        <label><input type="checkbox" name="lang" value="hindi" checked> Hindi</label>
+                        <label><input type="checkbox" name="lang" value="telugu"> Telugu</label>
+                        <label><input type="checkbox" name="lang" value="tamil"> Tamil</label>
+                      </td>
+                    </tr>
+
+                    <!-- 8) Address -->
+                    <tr>
+                      <td class="form-label">Address</td>
+                      <td>
+                        <textarea id="regAddress" rows="3" placeholder="Enter residential address"></textarea>
+                      </td>
+                    </tr>
+
+                    <!-- Buttons -->
+                    <tr>
+                      <td class="form-label"></td>
+                      <td>
+                        <button type="submit" class="submit-btn">Register</button>
+                        <button type="reset" class="reset-btn">Clear</button>
+                      </td>
+                    </tr>
+                  </table>
+                </form>
+              </div>
+            </div>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toastNotification" class="toast"></div>
+
+  <!-- Modal for Individual Lab Experiments (EXP 1 to EXP 9) -->
+  <div id="labModal" class="modal-overlay">
+    <div class="modal-content">
+      <button id="closeLabBtn" class="modal-close">&times;</button>
+      <h3 style="margin-top: 0; color: #1e3a8a; border-bottom: 2px solid #e2e8f0; padding-bottom: 8px;">
+        🧪 Web Designing Workshop (BCS-353) — Experiments
+      </h3>
+      <p style="font-size: 13px; color: #64748b;">
+        Inspect the individual lab experiment submissions with their exact syllabus code and standalone demos:
+      </p>
+
+      <div class="exp-grid">
+        <div class="exp-card">
+          <h4>Exp 1: Book Store Homepage</h4>
+          <p>HTML Frameset layout with top, left, and right catalogue frames.</p>
+          <a href="./EXP%201/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%201" target="_blank">View Code</a>
         </div>
-        <div class="card-actions">
-          <a class="btn-primary" href="./EXP%209/" target="_blank">Launch Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%209" target="_blank">Code</a>
+
+        <div class="exp-card">
+          <h4>Exp 2: Clean Login Page</h4>
+          <p>Table layout with pure CSS :target tab switching.</p>
+          <a href="./EXP%202/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%202" target="_blank">View Code</a>
+        </div>
+
+        <div class="exp-card">
+          <h4>Exp 3: Catalogue Page</h4>
+          <p>Structured book table with covers, prices, and Add to Cart.</p>
+          <a href="./EXP%203/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%203" target="_blank">View Code</a>
+        </div>
+
+        <div class="exp-card">
+          <h4>Exp 4: Shopping Cart Page</h4>
+          <p>Itemized cart table with quantities and grand total (- ₹2100).</p>
+          <a href="./EXP%204/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%204" target="_blank">View Code</a>
+        </div>
+
+        <div class="exp-card">
+          <h4>Exp 5: Registration Page</h4>
+          <p>Full HTML form with radio, checkboxes, dropdowns, and textarea.</p>
+          <a href="./EXP%205/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%205" target="_blank">View Code</a>
+        </div>
+
+        <div class="exp-card">
+          <h4>Exp 6: JS Validation (Name &amp; Pass)</h4>
+          <p>JavaScript checks for alphabets-only and 6-char minimums.</p>
+          <a href="./EXP%206/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%206" target="_blank">View Code</a>
+        </div>
+
+        <div class="exp-card">
+          <h4>Exp 7: JS Validation (Email &amp; Phone)</h4>
+          <p>Regex verification for name@domain.com and 10-digit phone.</p>
+          <a href="./EXP%207/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%207" target="_blank">View Code</a>
+        </div>
+
+        <div class="exp-card">
+          <h4>Exp 8: CSS Fonts &amp; Backgrounds</h4>
+          <p>Class/ID selectors, typography, and page/element background images.</p>
+          <a href="./EXP%208/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%208" target="_blank">View Code</a>
+        </div>
+
+        <div class="exp-card">
+          <h4>Exp 9: CSS Repeat &amp; Link States</h4>
+          <p>Background repeat controls and a:link, a:visited, a:hover, a:active.</p>
+          <a href="./EXP%209/" target="_blank">Launch Demo &rarr;</a>
+          <a href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%209" target="_blank">View Code</a>
         </div>
       </div>
     </div>
-
-    <footer>
-      <p>Developed for Web Designing Workshop Lab (BCS-353) &bull; Academic Session 2026-27 &bull; GL Bajaj ITM</p>
-    </footer>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
