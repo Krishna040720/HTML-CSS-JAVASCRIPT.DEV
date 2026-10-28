@@ -1,0 +1,79 @@
+/* ---------- Basic page ---------- */
+body {
+ font-family: "Times New Roman", Times, serif;
+ font-size: 16px;
+ margin: 30px;
+}
+/* ---------- Main table ---------- */
+.website {
+ width: 800px;
+ margin: 0 auto;
+ border-collapse: collapse;
+}
+.website td {
+ border: 1px solid #555;
+ padding: 8px;
+}
+/* ---------- Row 1: Logo and Website Name ---------- */
+.top-row {
+ background-color: #f4bd88;
+ height: 80px;
+}
+.logo-cell {
+ width: 130px;
+}
+.logo-cell img {
+ width: 90px;
+ display: block;
+ margin: 0 auto;
+}
+.site-name {
+ text-align: center;
+ font-size: 20px;
+}
+/* ---------- Row 2: Menu ---------- */
+.menu-row {
+ background-color: #f7e3d1;
+ text-align: center;
+ height: 40px;
+}
+.menu-row a {
+ color: black;
+ text-decoration: none;
+}
+/* ---------- Book rows ---------- */
+.book-row {
+ height: 120px;
+}
+.dept {
+ text-align: center;
+ width: 80px;
+}
+.details {
+ line-height: 1.6;
+}
+.price {
+ text-align: center;
+ width: 90px;
+}
+/* ---------- Book cover image ---------- */
+.cover {
+ width: 90px;
+ display: block;
+ margin: 0 auto;
+}
+/* ---------- Add to cart button ---------- */
+.cart-btn {
+ background-color: #f7c948;
+ border: 1px solid #b8860b;
+ border-radius: 6px;
+ padding: 6px 14px;
+ font-family: inherit;
+ font-size: 15px;
+ font-weight: bold;
+ white-space: nowrap;
+ cursor: pointer;
+}
+.cart-btn:hover {
+ background-color: #f2b705;
+}

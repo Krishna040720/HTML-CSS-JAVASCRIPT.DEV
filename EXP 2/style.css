@@ -1,0 +1,107 @@
+/* ---------- Basic ---------- */
+* {
+ box-sizing: border-box;
+}
+body {
+ margin: 0;
+ padding: 35px 30px 30px 30px;
+ font-family: "Times New Roman", Times, serif;
+ font-size: 16px;
+ color: black;
+ background: white;
+}
+/* ---------- Outer box ---------- */
+.login-page {
+ width: 701px;
+ height: 335px;
+ margin: 0 auto;
+ border: 2px solid #333;
+}
+.login-title {
+ height: 38px;
+ font-weight: bold;
+ padding: 5px 5px;
+}
+/* ---------- Table ---------- */
+.website {
+ width: calc(100% + 4px);
+ margin: 0 -2px;
+ height: 285px;
+ border-collapse: collapse;
+ table-layout: fixed;
+}
+.website td {
+ border: 1px solid #555;
+}
+.center {
+ text-align: center;
+}
+/* Row 1: Logo and Website Name */
+.top-row {
+ height: 64px;
+ background-color: #f4bd88;
+}
+/* the logo fits inside the first cell */
+.top-row img {
+ height: 52px;
+ display: block;
+ margin: 0 auto;
+}
+/* Row 2: Menu */
+.menu-row {
+ height: 34px;
+ background-color: #f7e3d1;
+ text-align: center;
+}
+.menu-row a {
+ display: block;
+ padding-top: 8px;
+}
+.menu-row .cart {
+ text-align: left;
+ padding-left: 48px;
+}
+/* All links look like plain text */
+a {
+ color: black;
+ text-decoration: none;
+}
+/* Left side: departments */
+.departments {
+ vertical-align: top;
+ padding: 7px 9px;
+}
+.departments a {
+ display: block;
+ height: 19px;
+ margin-bottom: 19px;
+}
+/* Right side: page content */
+.content {
+ vertical-align: top;
+ padding: 28px 0 0 49px;
+}
+.row {
+ height: 20px;
+ margin-bottom: 12px;
+}
+/* ---------- Pages using :target ---------- */
+/* every page is hidden by default */
+.page {
+ display: none;
+}
+/* the page whose link was clicked is shown */
+.page:target {
+ display: block;
+}
+/* Login is the default page, so it is shown when nothing else is chosen */
+#login {
+ display: block;
+}
+/* ...and hidden when another page is chosen */
+#home:target ~ #login,
+#registration:target ~ #login,
+#catalogue:target ~ #login,
+#cart:target ~ #login {
+ display: none;
+}
