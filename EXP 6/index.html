@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page - JS Validation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+ body { font-family: Arial, sans-serif; background: aliceblue; margin: 0; padding: 20px; }
+ .box { width: 400px; margin: 30px auto; background: white; padding: 28px;
+ border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+ .logo-header { text-align: center; margin-bottom: 12px; }
+ .logo-header img { height: 75px; width: auto; }
+ h2 { text-align: center; color: midnightblue; margin-top: 5px; margin-bottom: 20px; }
+ label { display: block; margin-top: 14px; font-weight: bold; color: #333; }
+ input[type=text], input[type=password] { width: 100%; padding: 9px; margin-top: 5px;
+ box-sizing: border-box; border: 1px solid gray; border-radius: 4px; font-size: 14px; }
+ input.bad { border: 2px solid crimson; outline: none; }
+ input.good { border: 2px solid forestgreen; outline: none; }
+ .error { color: crimson; font-size: 13px; min-height: 16px; margin-top: 4px; font-weight: 500; }
+ button { margin-top: 20px; width: 100%; padding: 11px; background: midnightblue;
+ color: white; border: 0; border-radius: 4px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+ button:hover { background: #1a237e; }
+ #result { margin-top: 16px; padding: 12px; background: honeydew; color: forestgreen;
+ border-radius: 4px; border: 1px solid #c8e6c9; display: none; text-align: center; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="box">
+ <div class="logo-header">
+   <img src="logo.png" alt="GL Bajaj Logo">
+ </div>
+ <h2>Registration Form</h2>
+ <form id="regForm" onsubmit="return validateForm()">
+ <label for="name">Name</label>
+ <input type="text" id="name" placeholder="Enter your name">
+ <div class="error" id="nameError"></div>
+ 
+ <label for="password">Password</label>
+ <input type="password" id="password" placeholder="Enter password">
+ <div class="error" id="passError"></div>
+ 
+ <button type="submit">Register</button>
+ </form>
+ <div id="result"></div>
+</div>
+
+<script>
+function validateName() {
+ var name = document.getElementById("name").value;
+ var err = document.getElementById("nameError");
+ var field = document.getElementById("name");
+ var onlyAlphabets = /^[A-Za-z]+$/; // letters only
+ 
+ if (name.trim() === "") {
+   err.textContent = "Name cannot be empty.";
+ } else if (!onlyAlphabets.test(name)) {
+   err.textContent = "Name should contain alphabets only.";
+ } else if (name.length < 6) {
+   err.textContent = "Name must be at least 6 characters long.";
+ } else {
+   err.textContent = "";
+   field.className = "good";
+   return true;
+ }
+ field.className = "bad";
+ return false;
+}
+
+function validatePassword() {
+ var pass = document.getElementById("password").value;
+ var err = document.getElementById("passError");
+ var field = document.getElementById("password");
+ 
+ if (pass === "") {
+   err.textContent = "Password cannot be empty.";
+ } else if (pass.length < 6) {
+   err.textContent = "Password must be at least 6 characters long.";
+ } else {
+   err.textContent = "";
+   field.className = "good";
+   return true;
+ }
+ field.className = "bad";
+ return false;
+}
+
+function validateForm() {
+ var okName = validateName();
+ var okPass = validatePassword();
+ var result = document.getElementById("result");
+ 
+ if (okName && okPass) {
+   result.style.display = "block";
+   result.textContent = "Registration Successful!";
+   alert("Registration Successful!");
+ } else {
+   result.style.display = "none";
+ }
+ return false; // stay on page for demo
+}
+</script>
+</body>
+</html>

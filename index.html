@@ -7,13 +7,16 @@
   <style>
     :root {
       --primary: #1e3a8a;
-      --primary-light: #3b82f6;
+      --primary-light: #2563eb;
       --accent: #f59e0b;
       --bg: #f8fafc;
       --card-bg: #ffffff;
       --text: #1e293b;
       --text-muted: #64748b;
       --border: #e2e8f0;
+      --js-tag: #7c3aed;
+      --css-tag: #0284c7;
+      --html-tag: #ea580c;
     }
     * {
       box-sizing: border-box;
@@ -28,17 +31,23 @@
       padding: 40px 20px;
     }
     .container {
-      max-width: 1000px;
+      max-width: 1050px;
       margin: 0 auto;
     }
     header {
       text-align: center;
       margin-bottom: 40px;
-      padding: 30px;
+      padding: 35px 25px;
       background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
       color: white;
       border-radius: 16px;
       box-shadow: 0 10px 25px -5px rgba(30, 58, 138, 0.25);
+    }
+    header img {
+      height: 90px;
+      width: auto;
+      margin-bottom: 12px;
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
     }
     header h1 {
       font-size: 2.2rem;
@@ -48,12 +57,12 @@
     }
     header p {
       font-size: 1.1rem;
-      opacity: 0.9;
+      opacity: 0.95;
     }
     .badge {
       display: inline-block;
-      margin-top: 12px;
-      padding: 6px 14px;
+      margin-top: 14px;
+      padding: 6px 16px;
       background: rgba(255, 255, 255, 0.2);
       border-radius: 9999px;
       font-size: 0.85rem;
@@ -63,20 +72,15 @@
     }
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
       margin-bottom: 40px;
-    }
-    @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
     }
     .card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 24px;
+      padding: 22px;
       transition: transform 0.2s, box-shadow 0.2s;
       display: flex;
       flex-direction: column;
@@ -84,30 +88,46 @@
     }
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.12);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
     }
     .card-tag {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       color: var(--primary-light);
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 6px;
     }
+    .tech-pill {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .pill-html { background: #ffedd5; color: var(--html-tag); }
+    .pill-css { background: #e0f2fe; color: var(--css-tag); }
+    .pill-js { background: #ede9fe; color: var(--js-tag); }
+    
     .card h2 {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       margin-bottom: 10px;
       color: var(--text);
     }
     .card p {
       color: var(--text-muted);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       margin-bottom: 20px;
       flex-grow: 1;
     }
     .card-actions {
       display: flex;
-      gap: 12px;
+      gap: 10px;
       align-items: center;
     }
     .btn-primary {
@@ -118,8 +138,8 @@
       color: white;
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
-      padding: 10px 18px;
+      font-size: 0.88rem;
+      padding: 9px 16px;
       border-radius: 8px;
       transition: background-color 0.2s;
     }
@@ -132,8 +152,8 @@
       color: var(--text);
       text-decoration: none;
       font-weight: 600;
-      font-size: 0.9rem;
-      padding: 10px 14px;
+      font-size: 0.88rem;
+      padding: 9px 12px;
       border: 1px solid var(--border);
       border-radius: 8px;
       transition: background-color 0.2s;
@@ -145,7 +165,7 @@
       text-align: center;
       color: var(--text-muted);
       font-size: 0.9rem;
-      padding-top: 20px;
+      padding-top: 25px;
       border-top: 1px solid var(--border);
     }
   </style>
@@ -153,68 +173,160 @@
 <body>
   <div class="container">
     <header>
-      <img src="logo.png" alt="GL Bajaj Logo" style="height: 85px; margin-bottom: 12px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));">
+      <img src="logo.png" alt="GL Bajaj Logo">
       <h1>Web Designing Workshop (BCS-353)</h1>
       <p>Department of Computer Science & Engineering | GL Bajaj ITM</p>
-      <div class="badge">Lab Experiments 1 to 4</div>
+      <div class="badge">Lab Experiments 1 to 9</div>
     </header>
 
     <div class="grid">
       <!-- Experiment 1 -->
       <div class="card">
         <div>
-          <div class="card-tag">Experiment 01</div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 01</span>
+            <span class="tech-pill pill-html">HTML / CSS</span>
+          </div>
           <h2>Online Book Store — Homepage</h2>
           <p>Static homepage designed using HTML framesets consisting of top, left, and right target frames with department catalogue routing and custom styling.</p>
         </div>
         <div class="card-actions">
-          <a class="btn-primary" href="./EXP%201/" target="_blank">Launch Live Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%201" target="_blank">View Code</a>
+          <a class="btn-primary" href="./EXP%201/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%201" target="_blank">Code</a>
         </div>
       </div>
 
       <!-- Experiment 2 -->
       <div class="card">
         <div>
-          <div class="card-tag">Experiment 02</div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 02</span>
+            <span class="tech-pill pill-css">Pure CSS :target</span>
+          </div>
           <h2>Clean Login Page</h2>
           <p>Login interface crafted with HTML tables and pure CSS <code>:target</code> pseudo-class navigation for client-side multi-tab view switching without JavaScript.</p>
         </div>
         <div class="card-actions">
-          <a class="btn-primary" href="./EXP%202/" target="_blank">Launch Live Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%202" target="_blank">View Code</a>
+          <a class="btn-primary" href="./EXP%202/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%202" target="_blank">Code</a>
         </div>
       </div>
 
       <!-- Experiment 3 -->
       <div class="card">
         <div>
-          <div class="card-tag">Experiment 03</div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 03</span>
+            <span class="tech-pill pill-html">HTML Tables</span>
+          </div>
           <h2>Catalogue Page</h2>
-          <p>Structured product catalogue displaying book covers, authors, publishers, pricing in Indian Rupees, and styled interactive Add to Cart buttons.</p>
+          <p>Structured product catalogue displaying textbook covers, authors, publishers, pricing in Indian Rupees, and styled interactive Add to Cart buttons.</p>
         </div>
         <div class="card-actions">
-          <a class="btn-primary" href="./EXP%203/" target="_blank">Launch Live Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%203" target="_blank">View Code</a>
+          <a class="btn-primary" href="./EXP%203/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%203" target="_blank">Code</a>
         </div>
       </div>
 
       <!-- Experiment 4 -->
       <div class="card">
         <div>
-          <div class="card-tag">Experiment 04</div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 04</span>
+            <span class="tech-pill pill-html">HTML Tables</span>
+          </div>
           <h2>Shopping Cart Page</h2>
           <p>Itemized shopping cart table presenting book details, quantities, line-item pricing, and automated grand total calculation formatting.</p>
         </div>
         <div class="card-actions">
-          <a class="btn-primary" href="./EXP%204/" target="_blank">Launch Live Demo &rarr;</a>
-          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%204" target="_blank">View Code</a>
+          <a class="btn-primary" href="./EXP%204/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%204" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Experiment 5 -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 05</span>
+            <span class="tech-pill pill-html">HTML Forms</span>
+          </div>
+          <h2>Registration Page Form</h2>
+          <p>Comprehensive registration form with text fields, password masking, radio buttons, DOB dropdowns, language checkboxes, and textarea with reset/submit.</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn-primary" href="./EXP%205/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%205" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Experiment 6 -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 06</span>
+            <span class="tech-pill pill-js">JavaScript</span>
+          </div>
+          <h2>JS Validation: Name & Password</h2>
+          <p>Client-side JavaScript form validation checking alphabet-only constraints, minimum 6-character length requirements, and dynamic visual styling.</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn-primary" href="./EXP%206/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%206" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Experiment 7 -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 07</span>
+            <span class="tech-pill pill-js">JavaScript</span>
+          </div>
+          <h2>JS Validation: Email & Phone</h2>
+          <p>Client-side regular expression validation ensuring strict <code>name@domain.com</code> email formatting and exactly 10-digit numeric phone verification.</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn-primary" href="./EXP%207/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%207" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Experiment 8 -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 08</span>
+            <span class="tech-pill pill-css">CSS Selectors</span>
+          </div>
+          <h2>CSS: Fonts, Colors & Backgrounds</h2>
+          <p>Advanced CSS demonstrating class/ID selectors, typography hierarchies, and element-specific vs page-level background image application.</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn-primary" href="./EXP%208/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%208" target="_blank">Code</a>
+        </div>
+      </div>
+
+      <!-- Experiment 9 -->
+      <div class="card">
+        <div>
+          <div class="card-header">
+            <span class="card-tag">Experiment 09</span>
+            <span class="tech-pill pill-css">CSS Links</span>
+          </div>
+          <h2>CSS: Background Repeat & Links</h2>
+          <p>Controlling <code>background-repeat</code> (repeat vs repeat-x) and styling hyperlink pseudo-classes (<code>:link</code>, <code>:visited</code>, <code>:hover</code>, <code>:active</code>).</p>
+        </div>
+        <div class="card-actions">
+          <a class="btn-primary" href="./EXP%209/" target="_blank">Launch Demo &rarr;</a>
+          <a class="btn-secondary" href="https://github.com/Krishna040720/HTML-CSS-JAVASCRIPT.DEV/tree/main/EXP%209" target="_blank">Code</a>
         </div>
       </div>
     </div>
 
     <footer>
-      <p>Developed for Web Designing Workshop Lab (BCS-353) &bull; Academic Session 2026-27</p>
+      <p>Developed for Web Designing Workshop Lab (BCS-353) &bull; Academic Session 2026-27 &bull; GL Bajaj ITM</p>
     </footer>
   </div>
 </body>

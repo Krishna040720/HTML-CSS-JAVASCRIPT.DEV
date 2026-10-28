@@ -1,0 +1,205 @@
+/* ---------- Basic ---------- */
+* {
+ box-sizing: border-box;
+}
+body {
+ margin: 0;
+ padding: 35px 30px 30px 30px;
+ font-family: "Times New Roman", Times, serif;
+ font-size: 16px;
+ color: black;
+ background: white;
+}
+/* ---------- Outer box ---------- */
+.login-page {
+ width: 701px;
+ height: 335px;
+ margin: 0 auto;
+ border: 2px solid #333;
+}
+.login-title {
+ height: 38px;
+ font-weight: bold;
+ padding: 5px 5px;
+}
+/* ---------- Table ---------- */
+.website {
+ width: calc(100% + 4px);
+ margin: 0 -2px;
+ height: 285px;
+ border-collapse: collapse;
+ table-layout: fixed;
+}
+.website td {
+ border: 1px solid #555;
+}
+.center {
+ text-align: center;
+}
+/* Row 1: Logo and Website Name */
+.top-row {
+ height: 64px;
+ background-color: #f4bd88;
+}
+/* the logo fits inside the first cell */
+.top-row img {
+ height: 52px;
+ display: block;
+ margin: 0 auto;
+}
+/* Row 2: Menu */
+.menu-row {
+ height: 34px;
+ background-color: #f7e3d1;
+ text-align: center;
+}
+.menu-row a {
+ display: block;
+ padding-top: 8px;
+}
+.menu-row .cart {
+ text-align: left;
+ padding-left: 48px;
+}
+/* All links look like plain text */
+a {
+ color: black;
+ text-decoration: none;
+}
+/* Left side: departments */
+.departments {
+ vertical-align: top;
+ padding: 7px 9px;
+}
+.departments a {
+ display: block;
+ height: 19px;
+ margin-bottom: 19px;
+}
+/* Right side: page content */
+.content {
+ vertical-align: top;
+ padding: 28px 0 0 49px;
+}
+.row {
+ height: 20px;
+ margin-bottom: 12px;
+}
+/* ---------- Pages using :target ---------- */
+/* every page is hidden by default */
+.page {
+ display: none;
+}
+/* the page whose link was clicked is shown */
+.page:target {
+ display: block;
+}
+/* Login is the default page, so it is shown when nothing else is chosen */
+#login {
+ display: block;
+}
+/* ...and hidden when another page is chosen */
+#home:target ~ #login,
+#registration:target ~ #login,
+#catalogue:target ~ #login,
+#cart:target ~ #login {
+ display: none;
+}
+
+/* ==========================================================
+ EXPERIMENT 8 : CSS (fonts, colors, background images)
+ ========================================================== */
+/* (a) Background image for the whole PAGE */
+body {
+ background-image: url('bg_page.png');
+}
+.login-page {
+ background-color: white; /* white box so the text stays easy to read */
+}
+/* (b) Background image for a SINGLE element (the title bar) */
+.login-title {
+ background-image: url('bg_title.png');
+}
+/* (c) Different fonts, sizes and colors using selectors */
+/* class selector : title bar */
+.login-title {
+ font-family: Georgia, serif;
+ font-size: 20px;
+ color: midnightblue;
+ letter-spacing: 1px;
+}
+/* element + class selector : website name in the orange row */
+.top-row td:last-child {
+ font-family: Georgia, serif;
+ font-size: 24px;
+ font-weight: bold;
+ color: maroon;
+}
+/* class selector : menu links */
+.menu-row a {
+ font-family: Verdana, sans-serif;
+ font-size: 14px;
+ font-weight: bold;
+ color: saddlebrown;
+}
+.menu-row a:hover {
+ color: crimson;
+ text-decoration: underline;
+}
+/* class selector : department links */
+.departments a {
+ font-family: "Courier New", monospace;
+ font-size: 16px;
+ font-weight: bold;
+ color: darkgreen;
+}
+/* class selector : lines of the page content */
+.row {
+ font-family: Arial, sans-serif;
+ font-size: 17px;
+ color: darkslategray;
+}
+/* id selector : first line of the login page */
+#login .row:first-child {
+ font-weight: bold;
+ font-style: italic;
+ color: crimson;
+}
+
+/* ==========================================================
+ EXPERIMENT 9 : CSS (background-repeat and link states)
+ ========================================================== */
+/* (a) Control the repetition of the image with background-repeat */
+/* page background: tiled in both directions (repeat) */
+body {
+ background-repeat: repeat;
+}
+/* title bar background: repeats only horizontally (repeat-x) */
+.login-title {
+ background-repeat: repeat-x;
+}
+/* other values you can try: repeat-y, no-repeat */
+
+/* (b) Styles for links: a:link, a:visited, a:active, a:hover
+ The order must be: link, visited, hover, active (LoVe HAte) */
+/* unvisited link */
+.website a:link {
+ color: navy;
+ text-decoration: none;
+}
+/* visited link */
+.website a:visited {
+ color: purple;
+ text-decoration: none;
+}
+/* mouse pointer over the link */
+.website a:hover {
+ color: crimson;
+ text-decoration: underline;
+ background-color: #fff3e0;
+}
+/* link while it is being clicked */
+.website a:active {
+ color: orange;
+ text-decoration: underline overline;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Page - Email and Phone Validation</title>
+<link rel="stylesheet" href="style.css">
+<style>
+ body { font-family: Arial, sans-serif; background: aliceblue; margin: 0; padding: 20px; }
+ .box { width: 400px; margin: 30px auto; background: white; padding: 28px;
+ border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+ .logo-header { text-align: center; margin-bottom: 12px; }
+ .logo-header img { height: 75px; width: auto; }
+ h2 { text-align: center; color: midnightblue; margin-top: 5px; margin-bottom: 20px; }
+ label { display: block; margin-top: 14px; font-weight: bold; color: #333; }
+ input[type=text] { width: 100%; padding: 9px; margin-top: 5px;
+ box-sizing: border-box; border: 1px solid gray; border-radius: 4px; font-size: 14px; }
+ input.bad { border: 2px solid crimson; outline: none; }
+ input.good { border: 2px solid forestgreen; outline: none; }
+ .error { color: crimson; font-size: 13px; min-height: 16px; margin-top: 4px; font-weight: 500; }
+ button { margin-top: 20px; width: 100%; padding: 11px; background: midnightblue;
+ color: white; border: 0; border-radius: 4px; font-size: 15px; font-weight: bold; cursor: pointer; transition: background 0.2s; }
+ button:hover { background: #1a237e; }
+ #result { margin-top: 16px; padding: 12px; background: honeydew; color: forestgreen;
+ border-radius: 4px; border: 1px solid #c8e6c9; display: none; text-align: center; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="box">
+ <div class="logo-header">
+   <img src="logo.png" alt="GL Bajaj Logo">
+ </div>
+ <h2>Registration Form</h2>
+ <form id="regForm" onsubmit="return validateForm()">
+ <label for="email">E-mail ID</label>
+ <input type="text" id="email" placeholder="name@domain.com">
+ <div class="error" id="emailError"></div>
+ 
+ <label for="phone">Phone Number</label>
+ <input type="text" id="phone" placeholder="Enter 10 digit number">
+ <div class="error" id="phoneError"></div>
+ 
+ <button type="submit">Register</button>
+ </form>
+ <div id="result"></div>
+</div>
+
+<script>
+function validateEmail() {
+ var email = document.getElementById("email").value;
+ var err = document.getElementById("emailError");
+ var field = document.getElementById("email");
+ // standard pattern: name@domain.com
+ var pattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z]{2,})+$/;
+ 
+ if (email.trim() === "") {
+   err.textContent = "E-mail ID cannot be empty.";
+ } else if (!pattern.test(email)) {
+   err.textContent = "Invalid E-mail ID. Use the format name@domain.com";
+ } else {
+   err.textContent = "";
+   field.className = "good";
+   return true;
+ }
+ field.className = "bad";
+ return false;
+}
+
+function validatePhone() {
+ var phone = document.getElementById("phone").value;
+ var err = document.getElementById("phoneError");
+ var field = document.getElementById("phone");
+ var digitsOnly = /^[0-9]+$/;
+ 
+ if (phone === "") {
+   err.textContent = "Phone number cannot be empty.";
+ } else if (!digitsOnly.test(phone)) {
+   err.textContent = "Phone number should contain digits only.";
+ } else if (phone.length !== 10) {
+   err.textContent = "Phone number must contain exactly 10 digits.";
+ } else {
+   err.textContent = "";
+   field.className = "good";
+   return true;
+ }
+ field.className = "bad";
+ return false;
+}
+
+function validateForm() {
+ var okEmail = validateEmail();
+ var okPhone = validatePhone();
+ var result = document.getElementById("result");
+ 
+ if (okEmail && okPhone) {
+   result.style.display = "block";
+   result.textContent = "Registration Successful!";
+   alert("Registration Successful!");
+ } else {
+   result.style.display = "none";
+ }
+ return false; // stay on page for demo
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="UTF-8">
+ <title>Login Page - Experiment 8</title>
+ <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="login-page">
+ <div class="login-title">LOGINPAGE:</div>
+ <table class="website">
+ <!-- Column widths -->
+ <colgroup>
+ <col style="width:103px">
+ <col style="width:124px">
+ <col style="width:124px">
+ <col style="width:124px">
+ <col>
+ </colgroup>
+ <!-- Row 1: Logo and Website Name -->
+ <tr class="top-row">
+ <td class="center"><img src="logo.png" alt="GL Bajaj Logo"></td>
+ <td class="center" colspan="4">GL Bajaj Online Book Store</td>
+ </tr>
+ <!-- Row 2: Menu -->
+ <tr class="menu-row">
+ <td><a href="#home">Home</a></td>
+ <td><a href="#login">Login</a></td>
+ <td><a href="#registration">Registration</a></td>
+ <td><a href="#catalogue">Catalogue</a></td>
+ <td class="cart"><a href="#cart">Cart</a></td>
+ </tr>
+ <!-- Row 3: Departments (left) and Page content (right) -->
+ <tr>
+ <td class="departments">
+ <a href="#home">CSE</a>
+ <a href="#home">ECE</a>
+ <a href="#home">EEE</a>
+ <a href="#home">CIVIL</a>
+ </td>
+ <td class="content" colspan="4">
+ <!-- Each page is hidden until its menu link is clicked -->
+ <div id="home" class="page"></div>
+ <div id="registration" class="page">
+ <div class="row">Registration:</div>
+ <div class="row">User Name:</div>
+ <div class="row">Password:</div>
+ <div class="row">Confirm Password:</div>
+ </div>
+ <div id="catalogue" class="page">
+ <div class="row">Catalogue:</div>
+ <div class="row">Books available in the catalogue.</div>
+ </div>
+ <div id="cart" class="page">
+ <div class="row">Cart:</div>
+ <div class="row">Your cart is currently empty.</div>
+ </div>
+ <!-- Login page: shown by default -->
+ <div id="login" class="page">
+ <div class="row">Login Page:</div>
+ <div class="row">User Name:</div>
+ <div class="row">Password:</div>
+ </div>
+ </td>
+ </tr>
+ </table>
+</div>
+</body>
+</html>
