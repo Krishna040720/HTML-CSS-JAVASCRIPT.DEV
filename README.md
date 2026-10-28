@@ -1,6 +1,6 @@
-# ONLINE STORE — Web Designing Workshop (BCS-353)
+# ONLINE STORE & Lab Experiments — Web Designing Workshop (BCS-353)
 
-> **Official Academic Web Application & Lab Experiments**  
+> **Official Academic Web Application & Lab Experiments 1 to 10**  
 > **Institution:** G.L. Bajaj Institute of Technology and Management, Greater Noida  
 > **Department:** Department of Computer Science and Engineering  
 
@@ -11,18 +11,18 @@
 🔗 **[Click Here to Launch the Live "ONLINE STORE" Website](https://krishna040720.github.io/HTML-CSS-JAVASCRIPT.DEV/)**  
 *(Direct link: `https://krishna040720.github.io/HTML-CSS-JAVASCRIPT.DEV/`)*
 
-The **ONLINE STORE** brings together all 9 laboratory experiments into a single, fully-featured web application:
+The **ONLINE STORE** brings together the core laboratory experiments into a single, fully-featured academic web application:
 - **Header & Branding:** Official GL Bajaj crest, store title (*ONLINE STORE*), and college name.
 - **Interactive Navigation Bar:** Seamless client-side routing between Home, Catalogue, Cart (with live badge counter), Login, and Registration.
 - **Departmental Category Filter:** Filter academic textbooks by CSE, ECE, EEE, CIVIL, and MECHANICAL branches.
 - **Dynamic Book Catalogue:** Book covers, author, publisher, INR pricing (₹), and functional *Add to Cart* action triggers with animated toast notifications.
 - **Real-Time Shopping Cart:** Line-item breakdowns, quantity adjusters (`+` / `-`), line amounts, grand total calculation, cart clearing, and simulated checkout.
 - **Secure Login & Complete Registration:** Form controls with real-time JavaScript validation for Name, Password, Email (`name@domain.com`), and Phone (10-digit number) with visual green/red state indicators.
-- **Lab Inspection Modal:** Quick-access modal to launch and grade any individual experiment (`EXP 1` through `EXP 9`).
+- **Lab Inspection Modal:** Quick-access modal to launch and grade any individual experiment (`EXP 1` through `EXP 10`).
 
 ---
 
-## 🧪 Individual Lab Experiments Directory
+## 🧪 Individual Lab Experiments Directory (EXP 1 to EXP 10)
 
 Each experiment folder contains its own code, visual assets, and a dedicated `README.md` with live links:
 
@@ -37,6 +37,7 @@ Each experiment folder contains its own code, visual assets, and a dedicated `RE
 | **07** | **JS Validation: Email & Phone** | **JavaScript** | 🔗 [**Live Demo EXP 7**](https://krishna040720.github.io/HTML-CSS-JAVASCRIPT.DEV/EXP%207/) | [View Code](./EXP%207/) |
 | **08** | **CSS: Selectors, Fonts & Background Images** | CSS3 | 🔗 [**Live Demo EXP 8**](https://krishna040720.github.io/HTML-CSS-JAVASCRIPT.DEV/EXP%208/) | [View Code](./EXP%208/) |
 | **09** | **CSS: Background Repeat & Link States** | CSS3 | 🔗 [**Live Demo EXP 9**](https://krishna040720.github.io/HTML-CSS-JAVASCRIPT.DEV/EXP%209/) | [View Code](./EXP%209/) |
+| **10** | **Developer Portfolio Website** (Krishna's Portfolio) | HTML / CSS / JS | 🔗 [**Live Demo EXP 10**](https://krishna040720.github.io/HTML-CSS-JAVASCRIPT.DEV/EXP%2010/) | [View Code](./EXP%2010/) |
 
 ---
 
@@ -53,7 +54,7 @@ HTML-CSS-JAVASCRIPT.DEV/
 ├── bg_title.png      # Horizontal repeating title banner
 ├── README.md         # Repository documentation and live links
 │
-├── ONLINE STORE/     # Standalone folder containing the complete unified project
+├── ONLINE STORE/     # Standalone folder containing the complete unified bookstore
 │   ├── index.html
 │   ├── style.css
 │   ├── script.js
@@ -68,7 +69,8 @@ HTML-CSS-JAVASCRIPT.DEV/
 ├── EXP 6/            # Experiment 6 (JS Validation: Name & Password)
 ├── EXP 7/            # Experiment 7 (JS Validation: Email & Phone)
 ├── EXP 8/            # Experiment 8 (CSS Selectors, Fonts & Backgrounds)
-└── EXP 9/            # Experiment 9 (CSS Background Repeat & Link States)
+├── EXP 9/            # Experiment 9 (CSS Background Repeat & Link States)
+└── EXP 10/           # Experiment 10 (Krishna Developer Portfolio Website)
 ```
 
 ---
